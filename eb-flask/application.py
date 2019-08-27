@@ -7,6 +7,7 @@ import json
 
 #local imports
 from poi import location_finder
+from poi import df_rest, df_walmart, df_weigh, df_descents, df_tourist, df_campsite, df_dump
 
 # Elastic Beanstalk initalization
 application = app = Flask(__name__)
@@ -20,8 +21,8 @@ def root():
     """
     return "Test Successful"
 
-@app.route('/fetch_data', methods=['POST'])
-def fetch_data():
+@app.route('/fetch_walmart', methods=['POST'])
+def fetch_walmart():
   """
   API route that receives user information and returns relevant routing datapoints and places of interest
   """
@@ -32,20 +33,105 @@ def fetch_data():
   user_long = data['longitude']
   user_dist = data['distance']
 
-  rest_df = location_finder(lat=user_lat, long=user_long, dist=user_dist)          
+  final_df = location_finder(df = df_walmart, latitude=user_lat, longitude=user_long, distance=user_dist)          
 
-  #return json_response()
-# 
+  return final_df.to_json(orient='records')
 
-  return json_response(latitude = rest_df['Latitude'], longitude = rest_df['Longitude'],
-                       state=rest_df['State'], roadway=rest_df['Roadway'],
-                       direction=rest_df['Direction'], name=rest_df['Name'],
-                       mile_marker = rest_df['Mile Marker'], restrooms = rest_df['Restrooms'],
-                       picnic_tables=rest_df['Picnic Tables'], vending_machines=rest_df['Vending Machines'],
-                       pets=rest_df['Pet Walking Area'], handicapable=rest_df['Handicapped Facilities'],
-                       rv_dump=rest_df['RV Dump'], restaurant=rest_df['Restaurant'], gas=rest_df['Gas'],
-                       scenic=rest_df['Scenic View'])
+@app.route('/fetch_rest_area', methods=['POST'])
+def fetch_rest_area():
+  """
+  API route that receives user information and returns relevant routing datapoints and places of interest
+  """
 
-  
+  data = request.get_json(force=True)
+
+  user_lat = data['latitude'] 
+  user_long = data['longitude']
+  user_dist = data['distance']
+
+  final_df = location_finder(df = df_rest, latitude=user_lat, longitude=user_long, distance=user_dist)          
+
+  return final_df.to_json(orient='records')
+
+@app.route('/fetch_weigh_station', methods=['POST'])
+def fetch_weigh_station():
+  """
+  API route that receives user information and returns relevant routing datapoints and places of interest
+  """
+
+  data = request.get_json(force=True)
+
+  user_lat = data['latitude'] 
+  user_long = data['longitude']
+  user_dist = data['distance']
+
+  final_df = location_finder(df = df_weigh, latitude=user_lat, longitude=user_long, distance=user_dist)          
+
+  return final_df.to_json(orient='records')
+
+@app.route('/fetch_road_descents', methods=['POST'])
+def fetch_road_descents():
+  """
+  API route that receives user information and returns relevant routing datapoints and places of interest
+  """
+
+  data = request.get_json(force=True)
+
+  user_lat = data['latitude'] 
+  user_long = data['longitude']
+  user_dist = data['distance']
+
+  final_df = location_finder(df = df_descents, latitude=user_lat, longitude=user_long, distance=user_dist)          
+
+  return final_df.to_json(orient='records')
+
+@app.route('/fetch_tourist_sites', methods=['POST'])
+def fetch_tourist_sites():
+  """
+  API route that receives user information and returns relevant routing datapoints and places of interest
+  """
+
+  data = request.get_json(force=True)
+
+  user_lat = data['latitude'] 
+  user_long = data['longitude']
+  user_dist = data['distance']
+
+  final_df = location_finder(df = df_tourist, latitude=user_lat, longitude=user_long, distance=user_dist)          
+
+  return final_df.to_json(orient='records')
+
+@app.route('/fetch_campsite', methods=['POST'])
+def fetch_campsite():
+  """
+  API route that receives user information and returns relevant routing datapoints and places of interest
+  """
+
+  data = request.get_json(force=True)
+
+  user_lat = data['latitude'] 
+  user_long = data['longitude']
+  user_dist = data['distance']
+
+  final_df = location_finder(df = df_campsite, latitude=user_lat, longitude=user_long, distance=user_dist)          
+
+  return final_df.to_json(orient='records')
+
+@app.route('/fetch_dump_station', methods=['POST'])
+def fetch_dump_station():
+  """
+  API route that receives user information and returns relevant routing datapoints and places of interest
+  """
+
+  data = request.get_json(force=True)
+
+  user_lat = data['latitude'] 
+  user_long = data['longitude']
+  user_dist = data['distance']
+
+  final_df = location_finder(df = df_dump, latitude=user_lat, longitude=user_long, distance=user_dist)          
+
+  return final_df.to_json(orient='records')
+
 if __name__ == '__main__':
         application.run()

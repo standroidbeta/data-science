@@ -1,6 +1,6 @@
 ## Places of Interest API
 
-
+**POST Request** eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/
 
 ~~~json
 {

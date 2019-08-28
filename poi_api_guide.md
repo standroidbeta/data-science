@@ -10,7 +10,7 @@ Body for HTTP request:
 	"distance": 5
 }
 ~~~
-Example JSON response:
+Example JSON response: <br>
 ![](Pictures/post_request.png)
 
 ### API Routes

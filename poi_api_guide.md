@@ -14,12 +14,12 @@ Example JSON response: <br>
 ![](Pictures/post_request.png)
 
 ### API Routes
-| Route                | URL                                                                  |
-| -------------------- | :------------------------------------------------------------------: |
-| Walmart Data         | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_walmart         |
-| Rest Area Data       | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_rest_area       |
-| Weigh Station Data   | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_weigh_station   |
-| Road Descent Data    | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_road_descents   |
-| Tourist Site Data    | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_tourist_sites   |
-| Campsite Data        | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_campsite        |
-| Dump Station Data    | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_dump_station    |
+| Route                | URL                                                                  | Type |
+| -------------------- | :------------------------------------------------------------------: | ---- |
+| Walmart Data         | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_walmart         | Post |
+| Rest Area Data       | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_rest_area       | Post |
+| Weigh Station Data   | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_weigh_station   | Post |
+| Road Descent Data    | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_road_descents   | Post |
+| Tourist Site Data    | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_tourist_sites   | Post |
+| Campsite Data        | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_campsite        | Post |
+| Dump Station Data    | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_dump_station    | Post |

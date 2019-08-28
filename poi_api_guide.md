@@ -14,7 +14,7 @@ This API returns the coordinates and general information of a user's desired pla
 | Dump Station Data    | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_dump_station    | Post |
 
 ### HTTP Request
-Body for HTTP request:
+Example Body for HTTP request:
 ~~~json
 {
 	"latitude": 35.7796, 

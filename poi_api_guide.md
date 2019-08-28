@@ -1,8 +1,10 @@
 ## Places of Interest API
 
+This API is designed to return 
+
 ### API Routes
 | Route                | URL                                                                  | Type |
-| -------------------- | :------------------------------------------------------------------: | ---- |
+| -------------------- | -------------------------------------------------------------------- | ---- |
 | Walmart Data         | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_walmart         | Post |
 | Rest Area Data       | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_rest_area       | Post |
 | Weigh Station Data   | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_weigh_station   | Post |

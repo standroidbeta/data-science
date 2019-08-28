@@ -1,6 +1,6 @@
 ## Places of Interest API
 
-This API is designed to return 
+This API is designed to return the coordinates and general information of a user's desired place of interest relative to the user's current location and desired radius. 
 
 ### API Routes
 | Route                | URL                                                                  | Type |

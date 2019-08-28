@@ -14,10 +14,12 @@ Example JSON response: <br>
 ![](Pictures/post_request.png)
 
 ### API Routes
-fetch_walmart <br>
-fetch_rest_area <br>
-fetch_weight_station <br>
-fetch_road_descents <br>
-fetch_tourist_sites <br>
-fetch_campsite <br>
-fetch_dump_station <br>
+| Route                | URL                                                                  |
+| -------------------- | :------------------------------------------------------------------: |
+| Walmart Data         | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_walmart         |
+| Rest Area Data       | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_rest_area       |
+| Weigh Station Data   | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_weigh_station   |
+| Road Descent Data    | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_road_descents   |
+| Tourist Site Data    | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_tourist_sites   |
+| Campsite Data        | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_campsite        |
+| Dump Station Data    | eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/fetch_dump_station    |

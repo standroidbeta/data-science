@@ -2,6 +2,7 @@
 
 **POST Request** eb-flask-rv-dev.us-east-1.elasticbeanstalk.com/
 
+Body for HTTP request:
 ~~~json
 {
 	"latitude": 35.7796, 
@@ -9,7 +10,7 @@
 	"distance": 5
 }
 ~~~
-
+Example JSON response:
 ![](Pictures/post_request.png)
 
 ### API Routes

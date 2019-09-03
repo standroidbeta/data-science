@@ -102,3 +102,12 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# confidential information
+/stan_notebooks/st_credentials.json
+
+# chromedriver
+/stan_notebooks/chromedriver
+
+# virtualenv
+/eb-flask/virt 

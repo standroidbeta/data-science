@@ -24,5 +24,5 @@ Example Body for HTTP request:
 ~~~
 ### HTTP Response
 Example JSON response (Walmart Data): <br>
-![](Pictures/post_request.png)
+![](../Pictures/post_request.png)
 

@@ -110,4 +110,4 @@ venv.bak/
 /stan_notebooks/chromedriver
 
 # virtualenv
-/eb-flask/virt 
+/poi_flask/virt 

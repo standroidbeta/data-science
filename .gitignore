@@ -111,3 +111,4 @@ venv.bak/
 
 # virtualenv
 /poi_flask/virt 
+/custom_nav_flask/virt

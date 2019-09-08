@@ -111,3 +111,9 @@ venv.bak/
 
 # virtualenv
 /rv_combined_flask/virt 
+
+# ebextensions
+/rv_combined_flask/.ebextensions
+
+# CSV files
+/rv_combined_flask/CSVs

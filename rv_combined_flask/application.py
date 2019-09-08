@@ -7,7 +7,8 @@ import json
 
 #local imports
 from poi import location_finder
-from poi import df_rest, df_walmart, df_weigh, df_descents, df_tourist, df_campsite, df_dump
+from poi import df_rest, df_walmart, df_weigh, df_tourist, df_campsite, df_dump
+from height_logic import get_low_clearances, get_med_coordinate, haversine, km_to_mile, haversine, location_finder
 
 # Elastic Beanstalk initalization
 application = app = Flask(__name__)
@@ -20,6 +21,27 @@ def root():
     Testing
     """
     return "Test Successful"
+
+@app.route('/fetch_low_clearance', methods=['POST'])
+def fetch_low_clearance():
+  """
+  API route that receives user information and returns relevant routing datapoints
+  """
+
+  data = request.get_json(force=True)
+
+  user_height = data['height']
+  lon1 = data['start_lon']
+  lat1 = data['start_lat']
+  lon2 = data['end_lon']
+  lat2 = data['end_lat']
+
+  lat_med, lon_med = get_med_coordinate(lon1, lat1, lon2, lat2)
+  distance = km_to_mile(haversine(lon1, lat1, lon2, lat2))
+  df = get_low_clearances(user_height)
+  df = location_finder(df, lat_med, lon_med, distance)
+
+  return df.to_json(orient='records')
 
 @app.route('/fetch_walmart', methods=['POST'])
 def fetch_walmart():
@@ -66,22 +88,6 @@ def fetch_weigh_station():
   user_dist = data['distance']
 
   final_df = location_finder(df = df_weigh, latitude=user_lat, longitude=user_long, distance=user_dist)          
-
-  return final_df.to_json(orient='records')
-
-@app.route('/fetch_road_descents', methods=['POST'])
-def fetch_road_descents():
-  """
-  API route that receives user information and returns relevant routing datapoints and places of interest
-  """
-
-  data = request.get_json(force=True)
-
-  user_lat = data['latitude'] 
-  user_long = data['longitude']
-  user_dist = data['distance']
-
-  final_df = location_finder(df = df_descents, latitude=user_lat, longitude=user_long, distance=user_dist)          
 
   return final_df.to_json(orient='records')
 

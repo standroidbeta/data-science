@@ -110,5 +110,4 @@ venv.bak/
 /stan_notebooks/chromedriver
 
 # virtualenv
-/poi_flask/virt 
-/custom_nav_flask/virt
+/rv_combined_flask/virt 

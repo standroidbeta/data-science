@@ -1,47 +1,12 @@
-import pandas as pd 
-from math import radians, cos, sin, asin, sqrt
+import pandas as pd
 
-def get_low_clearances(user_height):
-
-    df = pd.read_csv('low_clearances.csv')
-
-    no_clearance = []
-
-    for i in df['height']:
-        boolean = user_height < i
-        no_clearance.append(boolean)
-
-    df['pass_through'] = no_clearance
-
-    df = df.loc[df['pass_through'] == False]
-
-    return df
-
-def get_med_coordinate(lon1, lat1, lon2, lat2):
-        lat_med = (lat1+lat2) / 2
-        lon_med = (lon1+lon2) / 2
-
-        return lat_med, lon_med
-
-def haversine(lon1, lat1, lon2, lat2):
-    """
-    Calculate the great circle distance between two points 
-    on the earth (specified in decimal degrees)
-    """
-    # convert decimal degrees to radians 
-    lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])
-
-    # haversine formula 
-    dlon = lon2 - lon1 
-    dlat = lat2 - lat1 
-    a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
-    c = 2 * asin(sqrt(a)) 
-    r = 6371 # Radius of earth in kilometers. Use 3956 for miles
-    return c * r
-
-def km_to_mile(distance):
-    distance = distance *0.621371
-    return distance
+# CSV data imports
+df_rest = pd.read_csv('CSVs/rest_stop_api.csv')
+df_walmart = pd.read_csv("CSVs/walmart_api.csv")
+df_weigh = pd.read_csv("CSVs/weigh_station_api.csv")
+df_tourist = pd.read_csv("CSVs/tourist_attractions_api.csv")
+df_campsite = pd.read_csv("CSVs/campsites_api.csv")
+df_dump = pd.read_csv("CSVs/dump_stations_api.csv")
 
 def location_finder(df, latitude, longitude, distance):
     """
@@ -61,7 +26,6 @@ def location_finder(df, latitude, longitude, distance):
     
     # Each lat/long degree is ~69.2 miles
     geo_dist = distance / 69.2
-    geo_dist = geo_dist * .7
 
     # Creates boundary limits on the latitude parallel
     lat_plus = latitude + geo_dist

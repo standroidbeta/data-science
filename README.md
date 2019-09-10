@@ -3,8 +3,8 @@
 # RV Navigator DS Repo
 
 The goals for the data science team is as follows:
-1. Find and scrape data that is relevant to creating a customized route based on a user's vehicle specifications.
-2. Find and scrape data that our target audience would find useful during the course of a trip.
+1. Locate, scrape, and clean data that is relevant to creating a customized route based on a user's vehicle specifications.
+2. Locate, scrape, and clean data that our target audience would find useful during the course of a trip.
 3. Incorporate data into an api for use by our front end web and iOS team. 
 4. Perform value-added analytics on user data to increase customer interaction and overall satisfaction.
 

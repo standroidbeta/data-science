@@ -13,7 +13,6 @@ This repository is divided between the flask API and notebooks directories.
 ## [Flask API](https://github.com/labs15-rv-life/data-science/tree/master/rv_combined_flask)
 
 
-
 ## [Notebooks](https://github.com/labs15-rv-life/data-science/tree/master/Notebooks)
 
 ## Contributing

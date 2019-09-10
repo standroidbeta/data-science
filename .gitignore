@@ -110,10 +110,10 @@ Notebooks/stan_notebooks/st_credentials.json
 Notebooks/stan_notebooks/chromedriver
 
 # virtualenv
-/Rv_Flask/virt 
+Rv_Flask/virt 
 
 # ebextensions
-/Rv_Flask/.ebextensions
+Rv_Flask/.ebextensions
 
 # CSV files
-/Rv_Flask/CSVs
+Rv_Flask/CSVs

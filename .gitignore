@@ -104,16 +104,16 @@ venv.bak/
 .mypy_cache/
 
 # confidential information
-/stan_notebooks/st_credentials.json
+Notebooks/stan_notebooks/st_credentials.json
 
 # chromedriver
-/stan_notebooks/chromedriver
+Notebooks/stan_notebooks/chromedriver
 
 # virtualenv
-/rv_combined_flask/virt 
+/Rv_Flask/virt 
 
 # ebextensions
-/rv_combined_flask/.ebextensions
+/Rv_Flask/.ebextensions
 
 # CSV files
-/rv_combined_flask/CSVs
+/Rv_Flask/CSVs

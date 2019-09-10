@@ -14,7 +14,7 @@ This repository is divided between the flask API and notebooks directories.
 
 
 
-## [Notebooks](https://github.com/labs15-rv-life/data-science/tree/master/connor_notebooks)
+## [Notebooks](https://github.com/labs15-rv-life/data-science/tree/master/Notebooks)
 
 ## Contributing
 

@@ -6,9 +6,9 @@ from flask_cors import CORS
 import json
 
 #local imports
-from poi import location_finder
-from poi import df_rest, df_walmart, df_weigh, df_tourist, df_campsite, df_dump
-from height_logic import get_low_clearances, get_med_coordinate, haversine, km_to_mile, haversine, location_finder
+from data_load import *
+from height_logic import get_low_clearances, location_finder
+from utilities.geometry_test import Geometry as ge
 
 # Elastic Beanstalk initalization
 application = app = Flask(__name__)
@@ -36,10 +36,10 @@ def fetch_low_clearance():
   lon2 = data['end_lon']
   lat2 = data['end_lat']
 
-  lat_med, lon_med = get_med_coordinate(lon1, lat1, lon2, lat2)
-  distance = km_to_mile(haversine(lon1, lat1, lon2, lat2))
-  df = get_low_clearances(user_height)
-  df = location_finder(df, lat_med, lon_med, distance)
+  lat_med, lon_med = ge.get_med_coordinate(lon1, lat1, lon2, lat2)
+  radius = ge.km_to_mile(ge.haversine(lon1, lat1, lon2, lat2))
+  df = get_low_clearances(user_height, df_clearance, 'height')
+  df = location_finder(df, lat_med, lon_med, radius)
 
   return df.to_json(orient='records')
 
@@ -55,7 +55,7 @@ def fetch_walmart():
   user_long = data['longitude']
   user_dist = data['distance']
 
-  final_df = location_finder(df = df_walmart, latitude=user_lat, longitude=user_long, distance=user_dist)          
+  final_df = location_finder(df = df_walmart, latitude=user_lat, longitude=user_long, radius=user_dist)          
 
   return final_df.to_json(orient='records')
 
@@ -71,7 +71,7 @@ def fetch_rest_area():
   user_long = data['longitude']
   user_dist = data['distance']
 
-  final_df = location_finder(df = df_rest, latitude=user_lat, longitude=user_long, distance=user_dist)          
+  final_df = location_finder(df = df_rest, latitude=user_lat, longitude=user_long, radius=user_dist)          
 
   return final_df.to_json(orient='records')
 
@@ -87,7 +87,7 @@ def fetch_weigh_station():
   user_long = data['longitude']
   user_dist = data['distance']
 
-  final_df = location_finder(df = df_weigh, latitude=user_lat, longitude=user_long, distance=user_dist)          
+  final_df = location_finder(df = df_weigh, latitude=user_lat, longitude=user_long, radius=user_dist)          
 
   return final_df.to_json(orient='records')
 
@@ -103,7 +103,7 @@ def fetch_tourist_sites():
   user_long = data['longitude']
   user_dist = data['distance']
 
-  final_df = location_finder(df = df_tourist, latitude=user_lat, longitude=user_long, distance=user_dist)          
+  final_df = location_finder(df = df_tourist, latitude=user_lat, longitude=user_long, radius=user_dist)          
 
   return final_df.to_json(orient='records')
 
@@ -119,7 +119,7 @@ def fetch_campsite():
   user_long = data['longitude']
   user_dist = data['distance']
 
-  final_df = location_finder(df = df_campsite, latitude=user_lat, longitude=user_long, distance=user_dist)          
+  final_df = location_finder(df = df_campsite, latitude=user_lat, longitude=user_long, radius=user_dist)          
 
   return final_df.to_json(orient='records')
 
@@ -135,7 +135,7 @@ def fetch_dump_station():
   user_long = data['longitude']
   user_dist = data['distance']
 
-  final_df = location_finder(df = df_dump, latitude=user_lat, longitude=user_long, distance=user_dist)          
+  final_df = location_finder(df = df_dump, latitude=user_lat, longitude=user_long, radius=user_dist)          
 
   return final_df.to_json(orient='records')
 

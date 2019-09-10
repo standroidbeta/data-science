@@ -111,9 +111,12 @@ Notebooks/stan_notebooks/chromedriver
 
 # virtualenv
 Rv_Flask/virt 
+Rv_Flask_test/virt
 
 # ebextensions
 Rv_Flask/.ebextensions
+Rv_Flask_test/.ebextensions
 
 # CSV files
 Rv_Flask/CSVs
+Rv_Flask_test/CSVs

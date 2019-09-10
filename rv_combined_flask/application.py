@@ -5,10 +5,9 @@ import requests
 from flask_cors import CORS
 import json
 
-#local imports
 from data_load import *
 from height_logic import get_low_clearances, location_finder
-from utilities.geometry_test import Geometry as ge
+from utils.geometry import Geometry as ge
 
 # Elastic Beanstalk initalization
 application = app = Flask(__name__)

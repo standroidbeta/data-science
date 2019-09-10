@@ -1,7 +1,7 @@
 import pandas as pd 
 
 #from utilities.coords import reduce_dataframe, coord_to_square, miles_to_coord
-from utilities.coords import Coords as cr
+from utils.coords import Coords as cr
 
 def get_low_clearances(user_height, dataframe, height_feature):
 
